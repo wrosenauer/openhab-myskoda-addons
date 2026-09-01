@@ -9,15 +9,15 @@ Group Enyaq_Charging "Charging" (Enyaq)
 Group Enyaq_Position "Position" (Enyaq)
 
 // --- Status / Body ---
-Switch          Enyaq_OverallDoorsLocked    "Overall Doors Locked"     <lock>          (Enyaq_Body)  {channel="myskoda:vehicle:2361cc821e:status#overall-doors-locked"}
+String          Enyaq_OverallDoorsLocked    "Overall Doors Locked [%s]" <lock>         (Enyaq_Body)  {channel="myskoda:vehicle:2361cc821e:status#overall-doors-locked"}
 Switch          Enyaq_Locked                "Locked"                  <lock>          (Enyaq_Body)  {channel="myskoda:vehicle:2361cc821e:status#locked"}
 String          Enyaq_ReliableLockStatus    "Reliable Lock Status [%s]"                (Enyaq_Body)  {channel="myskoda:vehicle:2361cc821e:status#reliable-lock-status"}
-Contact         Enyaq_Doors                 "Doors [%s]"              <door>          (Enyaq_Body)  {channel="myskoda:vehicle:2361cc821e:status#doors"}
-Contact         Enyaq_Windows               "Windows [%s]"            <window>        (Enyaq_Body)  {channel="myskoda:vehicle:2361cc821e:status#windows"}
-Switch          Enyaq_Lights                "Lights"                  <light>         (Enyaq_Body)  {channel="myskoda:vehicle:2361cc821e:status#lights"}
-Contact         Enyaq_Sunroof               "Sunroof [%s]"            <window>        (Enyaq_Body)  {channel="myskoda:vehicle:2361cc821e:status#sunroof"}
-Contact         Enyaq_Trunk                 "Trunk [%s]"              <door>          (Enyaq_Body)  {channel="myskoda:vehicle:2361cc821e:status#trunk"}
-Contact         Enyaq_Bonnet                "Bonnet [%s]"             <door>          (Enyaq_Body)  {channel="myskoda:vehicle:2361cc821e:status#bonnet"}
+String          Enyaq_Doors                 "Doors [%s]"              <door>          (Enyaq_Body)  {channel="myskoda:vehicle:2361cc821e:status#doors"}
+String          Enyaq_Windows               "Windows [%s]"            <window>        (Enyaq_Body)  {channel="myskoda:vehicle:2361cc821e:status#windows"}
+String          Enyaq_Lights                "Lights [%s]"             <light>         (Enyaq_Body)  {channel="myskoda:vehicle:2361cc821e:status#lights"}
+String          Enyaq_Sunroof               "Sunroof [%s]"            <window>        (Enyaq_Body)  {channel="myskoda:vehicle:2361cc821e:status#sunroof"}
+String          Enyaq_Trunk                 "Trunk [%s]"              <door>          (Enyaq_Body)  {channel="myskoda:vehicle:2361cc821e:status#trunk"}
+String          Enyaq_Bonnet                "Bonnet [%s]"             <door>          (Enyaq_Body)  {channel="myskoda:vehicle:2361cc821e:status#bonnet"}
 DateTime        Enyaq_StatusLastUpdated     "Status Last Updated [%1$tR]"              (Enyaq_Body)  {channel="myskoda:vehicle:2361cc821e:status#last-updated"}
 
 // --- Vehicle / Odometer / Fuel ---
@@ -33,7 +33,7 @@ Number:Length   Enyaq_PrimaryRange          "Primary Range [%d km]"             
 DateTime        Enyaq_FuelLastUpdated       "Fuel Last Updated [%1$tR]"                (Enyaq_Vehicle) {channel="myskoda:vehicle:2361cc821e:fuel#last-updated"}
 
 // --- Position ---
-Switch          Enyaq_Parked                "Parked"                  <parkingcar>    (Enyaq_Position) {channel="myskoda:vehicle:2361cc821e:position#parking-state"}
+String          Enyaq_ParkingState          "Parking State [%s]"     <parkingcar>    (Enyaq_Position) {channel="myskoda:vehicle:2361cc821e:position#parking-state"}
 Location        Enyaq_Location              "Location"                <geoposition>   (Enyaq_Position) {channel="myskoda:vehicle:2361cc821e:position#location"}
 String          Enyaq_Address               "Address [%s]"            <text>          (Enyaq_Position) {channel="myskoda:vehicle:2361cc821e:position#address"}
 
@@ -43,16 +43,16 @@ Number:Length   Enyaq_RemainingRange        "Remaining Range [%d km]" <motion>  
 String          Enyaq_ChargingState         "Charging State [%s]"     <energy>        (Enyaq_Charging) {channel="myskoda:vehicle:2361cc821e:charging#charging-state"}
 String          Enyaq_ChargeType            "Charge Type [%s]"                        (Enyaq_Charging) {channel="myskoda:vehicle:2361cc821e:charging#charge-type"}
 Number:Power    Enyaq_ChargePower           "Charge Power [%.1f kW]"  <energy>        (Enyaq_Charging) {channel="myskoda:vehicle:2361cc821e:charging#charge-power"}
-Number          Enyaq_ChargeRate            "Charge Rate [%.1f km/h]"                 (Enyaq_Charging) {channel="myskoda:vehicle:2361cc821e:charging#charge-rate"}
-Number:Time     Enyaq_RemainingTime         "Remaining Time [%d min]" <time>          (Enyaq_Charging) {channel="myskoda:vehicle:2361cc821e:charging#remaining-time"}
+Number:Speed    Enyaq_ChargeRate            "Charge Rate [%.1f %unit%]"               (Enyaq_Charging) {channel="myskoda:vehicle:2361cc821e:charging#charge-rate"}
+Number:Time     Enyaq_RemainingTime         "Remaining Time [%d %unit%]" <time>       (Enyaq_Charging) {channel="myskoda:vehicle:2361cc821e:charging#remaining-time"}
 DateTime        Enyaq_FullyChargedAt        "Fully Charged At [%1$tR]"                (Enyaq_Charging) {channel="myskoda:vehicle:2361cc821e:charging#fully-charged-at"}
 Number:Dimensionless Enyaq_TargetSoC        "Target State of Charge [%d %%]"          (Enyaq_Charging) {channel="myskoda:vehicle:2361cc821e:charging#target-state-of-charge"}
 Number:Dimensionless Enyaq_CareModeTargetSoC "Battery Care Mode Target [%d %%]"       (Enyaq_Charging) {channel="myskoda:vehicle:2361cc821e:charging#battery-care-mode-target"}
 String          Enyaq_PreferredChargeMode   "Preferred Charge Mode [%s]"              (Enyaq_Charging) {channel="myskoda:vehicle:2361cc821e:charging#preferred-charge-mode"}
-Switch          Enyaq_ChargingCareMode      "Battery Care Mode"                       (Enyaq_Charging) {channel="myskoda:vehicle:2361cc821e:charging#charging-care-mode"}
-Switch          Enyaq_AutoUnlockPlug        "Auto Unlock Plug"                        (Enyaq_Charging) {channel="myskoda:vehicle:2361cc821e:charging#auto-unlock-plug"}
+String          Enyaq_ChargingCareMode      "Battery Care Mode [%s]"                  (Enyaq_Charging) {channel="myskoda:vehicle:2361cc821e:charging#charging-care-mode"}
+String          Enyaq_AutoUnlockPlug        "Auto Unlock Plug [%s]"                   (Enyaq_Charging) {channel="myskoda:vehicle:2361cc821e:charging#auto-unlock-plug"}
 String          Enyaq_MaxChargeCurrent      "Max Charge Current [%s]"                 (Enyaq_Charging) {channel="myskoda:vehicle:2361cc821e:charging#max-charge-current"}
-Number:ElectricCurrent Enyaq_MaxChargeCurrentA "Max Charge Current [%.0f A]"          (Enyaq_Charging) {channel="myskoda:vehicle:2361cc821e:charging#max-charge-current-ampere"}
+Number          Enyaq_MaxChargeCurrentA     "Max Charge Current [%d A]"               (Enyaq_Charging) {channel="myskoda:vehicle:2361cc821e:charging#max-charge-current-ampere"}
 Switch          Enyaq_ChargingSwitch        "Charging"                <energy>        (Enyaq_Charging) {channel="myskoda:vehicle:2361cc821e:charging#charging-switch"}
 DateTime        Enyaq_ChargingLastUpdated   "Charging Last Updated [%1$tR]"           (Enyaq_Charging) {channel="myskoda:vehicle:2361cc821e:charging#last-updated"}
 
@@ -63,20 +63,20 @@ DateTime        Enyaq_ClimateReachAt        "Reach Target At [%1$tR]"           
 Switch          Enyaq_WithoutExternalPower  "Without External Power"                  (Enyaq_Climate) {channel="myskoda:vehicle:2361cc821e:climate#without-external-power"}
 Switch          Enyaq_AtUnlock              "Start At Unlock"                         (Enyaq_Climate) {channel="myskoda:vehicle:2361cc821e:climate#at-unlock"}
 Switch          Enyaq_WindowHeatingEnabled  "Window Heating Enabled"                  (Enyaq_Climate) {channel="myskoda:vehicle:2361cc821e:climate#window-heating-enabled"}
-Switch          Enyaq_WindowHeatingFront    "Front Window Heat"                       (Enyaq_Climate) {channel="myskoda:vehicle:2361cc821e:climate#window-heating-front"}
-Switch          Enyaq_WindowHeatingRear     "Rear Window Heat"                        (Enyaq_Climate) {channel="myskoda:vehicle:2361cc821e:climate#window-heating-rear"}
+String          Enyaq_WindowHeatingFront    "Front Window Heat [%s]"                  (Enyaq_Climate) {channel="myskoda:vehicle:2361cc821e:climate#window-heating-front"}
+String          Enyaq_WindowHeatingRear     "Rear Window Heat [%s]"                   (Enyaq_Climate) {channel="myskoda:vehicle:2361cc821e:climate#window-heating-rear"}
 Switch          Enyaq_ACSwitch              "Air Conditioning"        <climate>       (Enyaq_Climate) {channel="myskoda:vehicle:2361cc821e:climate#air-conditioning-switch"}
 DateTime        Enyaq_ClimateLastUpdated    "Climate Last Updated [%1$tR]"            (Enyaq_Climate) {channel="myskoda:vehicle:2361cc821e:climate#last-updated"}
 
 // --- Auxiliary Heating ---
 String          Enyaq_AuxHeatingState       "State [%s]"                              (Enyaq_AuxHeating) {channel="myskoda:vehicle:2361cc821e:auxiliaryHeating#auxiliary-heating-state"}
 String          Enyaq_AuxStartMode          "Start Mode [%s]"                         (Enyaq_AuxHeating) {channel="myskoda:vehicle:2361cc821e:auxiliaryHeating#start-mode"}
-Number:Time     Enyaq_AuxDuration           "Duration [%d min]"       <time>          (Enyaq_AuxHeating) {channel="myskoda:vehicle:2361cc821e:auxiliaryHeating#duration"}
+Number:Time     Enyaq_AuxDuration           "Duration [%d %unit%]"    <time>          (Enyaq_AuxHeating) {channel="myskoda:vehicle:2361cc821e:auxiliaryHeating#duration"}
 Number:Temperature Enyaq_AuxTargetTemperature "Target Temperature [%.1f %unit%]"      (Enyaq_AuxHeating) {channel="myskoda:vehicle:2361cc821e:auxiliaryHeating#auxiliary-target-temperature"}
 DateTime        Enyaq_AuxReachAt            "Reach Target At [%1$tR]"                 (Enyaq_AuxHeating) {channel="myskoda:vehicle:2361cc821e:auxiliaryHeating#auxiliary-estimated-reach-target-at"}
 Switch          Enyaq_AuxSwitch             "Auxiliary Heating"       <fire>          (Enyaq_AuxHeating) {channel="myskoda:vehicle:2361cc821e:auxiliaryHeating#auxiliary-heating-switch"}
 
 // --- Active Ventilation ---
 String          Enyaq_VentState             "State [%s]"                              (Enyaq_Ventilation) {channel="myskoda:vehicle:2361cc821e:activeVentilation#active-ventilation-state"}
-Number:Time     Enyaq_VentDuration          "Duration [%d min]"       <time>          (Enyaq_Ventilation) {channel="myskoda:vehicle:2361cc821e:activeVentilation#active-ventilation-duration"}
+Number:Time     Enyaq_VentDuration          "Duration [%d %unit%]"    <time>          (Enyaq_Ventilation) {channel="myskoda:vehicle:2361cc821e:activeVentilation#active-ventilation-duration"}
 Switch          Enyaq_VentSwitch            "Active Ventilation"      <fan>           (Enyaq_Ventilation) {channel="myskoda:vehicle:2361cc821e:activeVentilation#active-ventilation-switch"}
