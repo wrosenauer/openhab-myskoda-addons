@@ -320,7 +320,7 @@ pages:
                                     item: Enyaq_Parking_State
                                     title: Parking State
 
-                          - component: oh-mapview-card
+                          - component: oh-webframe-card
                             config:
-                              item: Enyaq_Ort
+                              src: /page/page_192a3a4c9f
                               title: Position
