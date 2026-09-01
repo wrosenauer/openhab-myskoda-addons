@@ -23,7 +23,7 @@ pages:
             x: 0
             y: 0
             w: 16
-            h: 5
+            h: 3
           slots:
             default:
               - component: oh-list-card
@@ -48,9 +48,9 @@ pages:
         - component: oh-grid-item
           config:
             x: 0
-            y: 5
+            y: 3
             w: 8
-            h: 7
+            h: 4
           slots:
             default:
               - component: oh-list-card
@@ -82,9 +82,9 @@ pages:
         - component: oh-grid-item
           config:
             x: 0
-            y: 12
+            y: 7
             w: 8
-            h: 4
+            h: 2
           slots:
             default:
               - component: oh-list-card
@@ -104,9 +104,9 @@ pages:
         - component: oh-grid-item
           config:
             x: 0
-            y: 16
+            y: 9
             w: 8
-            h: 11
+            h: 6
           slots:
             default:
               - component: oh-list-card
@@ -155,9 +155,9 @@ pages:
         - component: oh-grid-item
           config:
             x: 8
-            y: 5
+            y: 3
             w: 8
-            h: 12
+            h: 7
           slots:
             default:
               - component: oh-list-card
@@ -212,9 +212,9 @@ pages:
         - component: oh-grid-item
           config:
             x: 8
-            y: 17
+            y: 10
             w: 8
-            h: 8
+            h: 5
           slots:
             default:
               - component: oh-list-card
@@ -256,9 +256,9 @@ pages:
         - component: oh-grid-item
           config:
             x: 8
-            y: 25
+            y: 15
             w: 8
-            h: 5
+            h: 3
           slots:
             default:
               - component: oh-list-card
@@ -282,9 +282,9 @@ pages:
         - component: oh-grid-item
           config:
             x: 8
-            y: 30
+            y: 18
             w: 8
-            h: 16
+            h: 9
           slots:
             default:
               - component: oh-list-card
@@ -348,9 +348,9 @@ pages:
         - component: oh-grid-item
           config:
             x: 8
-            y: 46
+            y: 27
             w: 8
-            h: 4
+            h: 2
           slots:
             default:
               - component: oh-list-card
@@ -370,9 +370,9 @@ pages:
         - component: oh-grid-item
           config:
             x: 8
-            y: 50
+            y: 29
             w: 8
-            h: 8
+            h: 6
           slots:
             default:
               - component: oh-webframe-card
