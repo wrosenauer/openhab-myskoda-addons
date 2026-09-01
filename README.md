@@ -1,0 +1,1 @@
+# openhab-myskoda-addons
