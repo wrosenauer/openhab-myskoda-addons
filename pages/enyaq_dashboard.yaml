@@ -19,7 +19,7 @@ pages:
           config: {}
           slots:
             default:
-              # ---- Header row ----
+              # ---- Row 1: header, full width ----
               - component: oh-grid-row
                 config: {}
                 slots:
@@ -46,14 +46,13 @@ pages:
                                     item: Enyaq_Status_Last_Updated
                                     title: Last Update
 
-              # ---- Main row: left / right columns ----
+              # ---- Row 2: Battery | Air Conditioning ----
               - component: oh-grid-row
                 config: {}
                 slots:
                   default:
                     - component: oh-grid-col
-                      config:
-                        width: 4
+                      config: {}
                       slots:
                         default:
                           - component: oh-list-card
@@ -81,7 +80,68 @@ pages:
                                   config:
                                     item: Enyaq_Charging_Last_Updated
                                     title: Last Update
+                    - component: oh-grid-col
+                      config: {}
+                      slots:
+                        default:
+                          - component: oh-list-card
+                            config:
+                              title: Air Conditioning
+                            slots:
+                              default:
+                                - component: oh-toggle-item
+                                  config:
+                                    item: Enyaq_Air_Conditioning
+                                    title: Air Conditioning
+                                - component: oh-stepper-item
+                                  config:
+                                    item: Enyaq_Climate_Targettemperature
+                                    title: Target Temperature
+                                    min: 16
+                                    max: 29.5
+                                    step: 0.5
+                                - component: oh-label-item
+                                  config:
+                                    item: Enyaq_Air_Conditioning_State
+                                    title: Climate State
+                                - component: oh-label-item
+                                  config:
+                                    item: Enyaq_Climate_Estimatedreachtargettemperatureat
+                                    title: Reach Target At
+                                - component: oh-label-item
+                                  config:
+                                    item: Enyaq_Climate_Windowheatingfront
+                                    title: Front Heat
+                                - component: oh-label-item
+                                  config:
+                                    item: Enyaq_Climate_Windowheatingrear
+                                    title: Rear Heat
+                                - component: oh-label-item
+                                  config:
+                                    item: Enyaq_Window_Heating_Enabled
+                                    title: Window Heating Enabled
+                                - component: oh-label-item
+                                  config:
+                                    item: Enyaq_Air_Conditioning_Without_External_Power
+                                    title: Without External Power
+                                - component: oh-label-item
+                                  config:
+                                    item: Enyaq_Air_Conditioning_At_Unlock
+                                    title: At Unlock
+                                - component: oh-label-item
+                                  config:
+                                    item: Enyaq_Climate_Last_Updated
+                                    title: Last Update
 
+              # ---- Row 3: Vehicle | Auxiliary Heating ----
+              - component: oh-grid-row
+                config: {}
+                slots:
+                  default:
+                    - component: oh-grid-col
+                      config: {}
+                      slots:
+                        default:
                           - component: oh-list-card
                             config:
                               title: Vehicle
@@ -95,7 +155,55 @@ pages:
                                   config:
                                     item: Enyaq_Odometer_Last_Updated
                                     title: Last Update
+                    - component: oh-grid-col
+                      config: {}
+                      slots:
+                        default:
+                          - component: oh-list-card
+                            config:
+                              title: Auxiliary Heating
+                            slots:
+                              default:
+                                - component: oh-toggle-item
+                                  config:
+                                    item: Enyaq_Auxiliary_Heating
+                                    title: Auxiliary Heating
+                                - component: oh-stepper-item
+                                  config:
+                                    item: Enyaq_AuxiliaryHeating_Duration
+                                    title: Duration
+                                    min: 0
+                                    max: 3600
+                                    step: 60
+                                - component: oh-stepper-item
+                                  config:
+                                    item: Enyaq_AuxiliaryHeating_Auxiliarytargettemperature
+                                    title: Target Temperature
+                                    min: 16
+                                    max: 29.5
+                                    step: 0.5
+                                - component: oh-label-item
+                                  config:
+                                    item: Enyaq_Auxiliary_Heating_State
+                                    title: State
+                                - component: oh-label-item
+                                  config:
+                                    item: Enyaq_Auxiliary_Start_Mode
+                                    title: Start Mode
+                                - component: oh-label-item
+                                  config:
+                                    item: Enyaq_AuxiliaryHeating_Auxiliaryestimatedreachtargetat
+                                    title: Reach Target At
 
+              # ---- Row 4: Body | Active Ventilation ----
+              - component: oh-grid-row
+                config: {}
+                slots:
+                  default:
+                    - component: oh-grid-col
+                      config: {}
+                      slots:
+                        default:
                           - component: oh-list-card
                             config:
                               title: Body
@@ -137,99 +245,10 @@ pages:
                                   config:
                                     item: Enyaq_Parking_State
                                     title: Parking State
-
                     - component: oh-grid-col
-                      config:
-                        width: 8
+                      config: {}
                       slots:
                         default:
-                          - component: oh-list-card
-                            config:
-                              title: Air Conditioning
-                            slots:
-                              default:
-                                # TODO: oh-toggle-item / config.item not yet confirmed for this OH version
-                                - component: oh-toggle-item
-                                  config:
-                                    item: Enyaq_Air_Conditioning
-                                    title: Air Conditioning
-                                # TODO: oh-stepper-item not yet confirmed for this OH version
-                                - component: oh-stepper-item
-                                  config:
-                                    item: Enyaq_Climate_Targettemperature
-                                    title: Target Temperature
-                                    min: 16
-                                    max: 29.5
-                                    step: 0.5
-                                - component: oh-label-item
-                                  config:
-                                    item: Enyaq_Air_Conditioning_State
-                                    title: Climate State
-                                - component: oh-label-item
-                                  config:
-                                    item: Enyaq_Climate_Estimatedreachtargettemperatureat
-                                    title: Reach Target At
-                                - component: oh-label-item
-                                  config:
-                                    item: Enyaq_Climate_Windowheatingfront
-                                    title: Front Heat
-                                - component: oh-label-item
-                                  config:
-                                    item: Enyaq_Climate_Windowheatingrear
-                                    title: Rear Heat
-                                - component: oh-label-item
-                                  config:
-                                    item: Enyaq_Window_Heating_Enabled
-                                    title: Window Heating Enabled
-                                - component: oh-label-item
-                                  config:
-                                    item: Enyaq_Air_Conditioning_Without_External_Power
-                                    title: Without External Power
-                                - component: oh-label-item
-                                  config:
-                                    item: Enyaq_Air_Conditioning_At_Unlock
-                                    title: At Unlock
-                                - component: oh-label-item
-                                  config:
-                                    item: Enyaq_Climate_Last_Updated
-                                    title: Last Update
-
-                          - component: oh-list-card
-                            config:
-                              title: Auxiliary Heating
-                            slots:
-                              default:
-                                - component: oh-toggle-item
-                                  config:
-                                    item: Enyaq_Auxiliary_Heating
-                                    title: Auxiliary Heating
-                                - component: oh-stepper-item
-                                  config:
-                                    item: Enyaq_AuxiliaryHeating_Duration
-                                    title: Duration
-                                    min: 0
-                                    max: 3600
-                                    step: 60
-                                - component: oh-stepper-item
-                                  config:
-                                    item: Enyaq_AuxiliaryHeating_Auxiliarytargettemperature
-                                    title: Target Temperature
-                                    min: 16
-                                    max: 29.5
-                                    step: 0.5
-                                - component: oh-label-item
-                                  config:
-                                    item: Enyaq_Auxiliary_Heating_State
-                                    title: State
-                                - component: oh-label-item
-                                  config:
-                                    item: Enyaq_Auxiliary_Start_Mode
-                                    title: Start Mode
-                                - component: oh-label-item
-                                  config:
-                                    item: Enyaq_AuxiliaryHeating_Auxiliaryestimatedreachtargetat
-                                    title: Reach Target At
-
                           - component: oh-list-card
                             config:
                               title: Active Ventilation
@@ -248,6 +267,32 @@ pages:
                                     item: Enyaq_ActiveVentilation_Activeventilationduration
                                     title: Duration
 
+              # ---- Row 5: Position | Charging ----
+              - component: oh-grid-row
+                config: {}
+                slots:
+                  default:
+                    - component: oh-grid-col
+                      config: {}
+                      slots:
+                        default:
+                          - component: oh-list-card
+                            config:
+                              title: Position
+                            slots:
+                              default:
+                                - component: oh-label-item
+                                  config:
+                                    item: Enyaq_Address
+                                    title: Address
+                                - component: oh-label-item
+                                  config:
+                                    item: Enyaq_Parking_State
+                                    title: Parking State
+                    - component: oh-grid-col
+                      config: {}
+                      slots:
+                        default:
                           - component: oh-list-card
                             config:
                               title: Charging
@@ -306,20 +351,15 @@ pages:
                                     item: Enyaq_Charging_Last_Updated
                                     title: Last Update
 
-                          - component: oh-list-card
-                            config:
-                              title: Position
-                            slots:
-                              default:
-                                - component: oh-label-item
-                                  config:
-                                    item: Enyaq_Address
-                                    title: Address
-                                - component: oh-label-item
-                                  config:
-                                    item: Enyaq_Parking_State
-                                    title: Parking State
-
+              # ---- Row 6: Map, full width ----
+              - component: oh-grid-row
+                config: {}
+                slots:
+                  default:
+                    - component: oh-grid-col
+                      config: {}
+                      slots:
+                        default:
                           - component: oh-webframe-card
                             config:
                               src: /page/page_192a3a4c9f
