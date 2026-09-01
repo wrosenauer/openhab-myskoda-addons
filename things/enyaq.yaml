@@ -1,0 +1,136 @@
+version: 1
+things:
+  myskoda:vehicle:2361cc821e:
+    bridge: myskoda:account:e92849fd93
+    label: Enyaq
+    config:
+      vin: "<YOUR_VIN>"
+      refreshInterval: 15
+      sPin: "<YOUR_S_PIN>"
+    channels:
+      status#overall-doors-locked:
+        type: overall-doors-locked
+      status#locked:
+        type: locked
+      status#reliable-lock-status:
+        type: reliable-lock-status
+      status#doors:
+        type: doors
+      status#windows:
+        type: windows
+      status#lights:
+        type: lights
+      status#sunroof:
+        type: sunroof
+      status#trunk:
+        type: trunk
+      status#bonnet:
+        type: bonnet
+      status#last-updated:
+        type: status-last-updated
+      odometer#mileage:
+        type: mileage
+      odometer#last-updated:
+        type: odometer-last-updated
+      fuel#car-type:
+        type: car-type
+      fuel#adblue-range:
+        type: adblue-range
+      fuel#total-range:
+        type: total-range
+      fuel#primary-engine-type:
+        type: engine-type
+      fuel#primary-state-of-charge:
+        type: engine-state-of-charge
+      fuel#primary-fuel-level:
+        type: engine-fuel-level
+      fuel#primary-range:
+        type: engine-range
+      fuel#secondary-engine-type:
+        type: engine-type
+      fuel#secondary-state-of-charge:
+        type: engine-state-of-charge
+      fuel#secondary-fuel-level:
+        type: engine-fuel-level
+      fuel#secondary-range:
+        type: engine-range
+      fuel#last-updated:
+        type: fuel-last-updated
+      position#parking-state:
+        type: parking-state
+      position#location:
+        type: location
+      position#address:
+        type: address
+      charging#state-of-charge:
+        type: state-of-charge
+      charging#remaining-range:
+        type: remaining-range
+      charging#charging-state:
+        type: charging-state
+      charging#charge-type:
+        type: charge-type
+      charging#charge-power:
+        type: charge-power
+      charging#charge-rate:
+        type: charge-rate
+      charging#remaining-time:
+        type: remaining-time
+      charging#fully-charged-at:
+        type: fully-charged-at
+      charging#target-state-of-charge:
+        type: target-state-of-charge
+      charging#battery-care-mode-target:
+        type: battery-care-mode-target
+      charging#preferred-charge-mode:
+        type: preferred-charge-mode
+      charging#charging-care-mode:
+        type: charging-care-mode
+      charging#auto-unlock-plug:
+        type: auto-unlock-plug
+      charging#max-charge-current:
+        type: max-charge-current
+      charging#max-charge-current-ampere:
+        type: max-charge-current-ampere
+      charging#charging-switch:
+        type: charging-switch
+      charging#last-updated:
+        type: charging-last-updated
+      climate#climate-state:
+        type: climate-state
+      climate#target-temperature:
+        type: target-temperature
+      climate#estimated-reach-target-temperature-at:
+        type: estimated-reach-target-temperature-at
+      climate#without-external-power:
+        type: without-external-power
+      climate#at-unlock:
+        type: at-unlock
+      climate#window-heating-enabled:
+        type: window-heating-enabled
+      climate#window-heating-front:
+        type: window-heating-side
+      climate#window-heating-rear:
+        type: window-heating-side
+      climate#air-conditioning-switch:
+        type: air-conditioning-switch
+      climate#last-updated:
+        type: climate-last-updated
+      auxiliaryHeating#auxiliary-heating-state:
+        type: auxiliary-heating-state
+      auxiliaryHeating#start-mode:
+        type: auxiliary-start-mode
+      auxiliaryHeating#duration:
+        type: auxiliary-duration
+      auxiliaryHeating#auxiliary-target-temperature:
+        type: target-temperature
+      auxiliaryHeating#auxiliary-estimated-reach-target-at:
+        type: auxiliary-estimated-reach-target-at
+      auxiliaryHeating#auxiliary-heating-switch:
+        type: auxiliary-heating-switch
+      activeVentilation#active-ventilation-state:
+        type: active-ventilation-state
+      activeVentilation#active-ventilation-duration:
+        type: active-ventilation-duration
+      activeVentilation#active-ventilation-switch:
+        type: active-ventilation-switch

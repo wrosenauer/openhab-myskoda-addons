@@ -1,0 +1,277 @@
+config:
+  label: Enyaq
+  icon: f7:car
+component: oh-grid-layout
+slots:
+  default:
+    - component: oh-grid-row
+      config: {}
+      slots:
+        default:
+          - component: oh-grid-col
+            config:
+              width: 12
+            slots:
+              default:
+                - component: oh-list-card
+                  config:
+                    title: Enyaq
+                  slots:
+                    default:
+                      - component: oh-toggle-item
+                        config:
+                          item: Enyaq_Locked
+                          title: Locked
+                      - component: oh-list-item
+                        config:
+                          item: Enyaq_Parked
+                          title: Parked
+                      - component: oh-list-item
+                        config:
+                          item: Enyaq_StatusLastUpdated
+                          title: Last Update
+
+    - component: oh-grid-row
+      config: {}
+      slots:
+        default:
+          # ---- Left column ----
+          - component: oh-grid-col
+            config:
+              width: 4
+            slots:
+              default:
+                - component: oh-list-card
+                  config:
+                    title: Battery
+                  slots:
+                    default:
+                      - component: oh-list-item
+                        config:
+                          item: Enyaq_StateOfCharge
+                          title: State of Charge
+                      - component: oh-list-item
+                        config:
+                          item: Enyaq_RemainingRange
+                          title: Range
+                      - component: oh-stepper-item
+                        config:
+                          item: Enyaq_TargetSoC
+                          title: Target
+                          min: 50
+                          max: 100
+                          step: 10
+                      - component: oh-list-item
+                        config:
+                          item: Enyaq_ChargingState
+                          title: Charging State
+                      - component: oh-list-item
+                        config:
+                          item: Enyaq_ChargingLastUpdated
+                          title: Last Update
+
+                - component: oh-list-card
+                  config:
+                    title: Vehicle
+                  slots:
+                    default:
+                      - component: oh-list-item
+                        config:
+                          item: Enyaq_Mileage
+                          title: Odometer
+                      - component: oh-list-item
+                        config:
+                          item: Enyaq_TotalRange
+                          title: Total Range
+                      - component: oh-list-item
+                        config:
+                          item: Enyaq_PrimaryFuelLevel
+                          title: Fuel
+                      - component: oh-list-item
+                        config:
+                          item: Enyaq_PrimaryEngineType
+                          title: Fuel Type
+                      - component: oh-list-item
+                        config:
+                          item: Enyaq_PrimaryRange
+                          title: Primary Range
+                      - component: oh-list-item
+                        config:
+                          item: Enyaq_AdblueRange
+                          title: AdBlue Range
+
+                - component: oh-list-card
+                  config:
+                    title: Body
+                  slots:
+                    default:
+                      - component: oh-toggle-item
+                        config:
+                          item: Enyaq_Locked
+                          title: Locked
+                      - component: oh-list-item
+                        config:
+                          item: Enyaq_Doors
+                          title: Doors
+                      - component: oh-list-item
+                        config:
+                          item: Enyaq_Windows
+                          title: Windows
+                      - component: oh-list-item
+                        config:
+                          item: Enyaq_Trunk
+                          title: Trunk
+                      - component: oh-list-item
+                        config:
+                          item: Enyaq_Bonnet
+                          title: Bonnet
+                      - component: oh-toggle-item
+                        config:
+                          item: Enyaq_Lights
+                          title: Lights
+                      - component: oh-list-item
+                        config:
+                          item: Enyaq_Parked
+                          title: Parked
+
+          # ---- Right column ----
+          - component: oh-grid-col
+            config:
+              width: 8
+            slots:
+              default:
+                - component: oh-list-card
+                  config:
+                    title: Air Conditioning
+                  slots:
+                    default:
+                      - component: oh-toggle-item
+                        config:
+                          item: Enyaq_ACSwitch
+                          title: Air Conditioning
+                      - component: oh-stepper-item
+                        config:
+                          item: Enyaq_TargetTemperature
+                          title: Target Temperature
+                          min: 16
+                          max: 30
+                          step: 0.5
+                      - component: oh-list-item
+                        config:
+                          item: Enyaq_ClimateState
+                          title: Climate State
+                      - component: oh-list-item
+                        config:
+                          item: Enyaq_ClimateReachAt
+                          title: Reach Target At
+                      - component: oh-toggle-item
+                        config:
+                          item: Enyaq_WindowHeatingFront
+                          title: Front Heat
+                      - component: oh-toggle-item
+                        config:
+                          item: Enyaq_WindowHeatingRear
+                          title: Rear Heat
+                      - component: oh-toggle-item
+                        config:
+                          item: Enyaq_WithoutExternalPower
+                          title: Without External Power
+                      - component: oh-toggle-item
+                        config:
+                          item: Enyaq_AtUnlock
+                          title: At Unlock
+
+                - component: oh-list-card
+                  config:
+                    title: Auxiliary Heating
+                  slots:
+                    default:
+                      - component: oh-toggle-item
+                        config:
+                          item: Enyaq_AuxSwitch
+                          title: Auxiliary Heating
+                      - component: oh-stepper-item
+                        config:
+                          item: Enyaq_AuxDuration
+                          title: Duration
+                          min: 0
+                          max: 60
+                          step: 5
+                      - component: oh-list-item
+                        config:
+                          item: Enyaq_AuxHeatingState
+                          title: State
+                      - component: oh-list-item
+                        config:
+                          item: Enyaq_AuxStartMode
+                          title: Start Mode
+
+                - component: oh-list-card
+                  config:
+                    title: Active Ventilation
+                  slots:
+                    default:
+                      - component: oh-toggle-item
+                        config:
+                          item: Enyaq_VentSwitch
+                          title: Active Ventilation
+                      - component: oh-list-item
+                        config:
+                          item: Enyaq_VentState
+                          title: State
+                      - component: oh-list-item
+                        config:
+                          item: Enyaq_VentDuration
+                          title: Duration
+
+                - component: oh-list-card
+                  config:
+                    title: Charging
+                  slots:
+                    default:
+                      - component: oh-toggle-item
+                        config:
+                          item: Enyaq_ChargingSwitch
+                          title: Charging
+                      - component: oh-list-item
+                        config:
+                          item: Enyaq_ChargePower
+                          title: Charge Power
+                      - component: oh-list-item
+                        config:
+                          item: Enyaq_ChargeRate
+                          title: Charge Rate
+                      - component: oh-list-item
+                        config:
+                          item: Enyaq_RemainingTime
+                          title: Remaining Time
+                      - component: oh-list-item
+                        config:
+                          item: Enyaq_FullyChargedAt
+                          title: Fully Charged At
+                      - component: oh-list-item
+                        config:
+                          item: Enyaq_PreferredChargeMode
+                          title: Charge Mode
+                      - component: oh-toggle-item
+                        config:
+                          item: Enyaq_ChargingCareMode
+                          title: Battery Care Mode
+                      - component: oh-toggle-item
+                        config:
+                          item: Enyaq_AutoUnlockPlug
+                          title: Auto Unlock Plug
+
+                - component: oh-list-card
+                  config:
+                    title: Position
+                  slots:
+                    default:
+                      - component: oh-list-item
+                        config:
+                          item: Enyaq_Address
+                          title: Address
+                      - component: oh-list-item
+                        config:
+                          item: Enyaq_Parked
+                          title: Parked
